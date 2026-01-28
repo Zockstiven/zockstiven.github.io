@@ -1,37 +1,146 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Einfacher Chat</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lojra Online, Chat dhe Muzik</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        #chat-box { height: 200px; border: 1px solid #ccc; overflow-y: scroll; padding: 10px; }
-        #message-input { width: 80%; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(45deg, #ff7e5f, #feb47b);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            width: 100%;
+        }
+        header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        header p {
+            font-size: 18px;
+        }
+        .container {
+            display: flex;
+            justify-content: space-around;
+            width: 80%;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+        .section {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 30%;
+            margin: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+        .section h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #ff7e5f;
+        }
+        .game-iframe, .radio-iframe {
+            width: 100%;
+            height: 250px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .chat-box {
+            width: 100%;
+            height: 150px;
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            resize: none;
+        }
+        .chat-box button {
+            padding: 10px;
+            background-color: #ff7e5f;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+        .chat-box button:hover {
+            background-color: #feb47b;
+        }
+        footer {
+            margin-top: 40px;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+        }
     </style>
 </head>
 <body>
+    <header>
+        <h1>Mirësevini në Lojra dhe Chat Online!</h1>
+        <p>Luaj, Bisedo dhe Dëgjo Muzikë të Përshtatshme për Të Rriturit!</p>
+    </header>
 
-<div id="chat-box"></div>
-<form id="chat-form">
-    <input type="text" id="message-input" placeholder="Nachricht eingeben..." />
-    <button type="submit">Senden</button>
-</form>
+    <div class="container">
+        <!-- Lojra Online -->
+        <div class="section">
+            <h2>Lojra Online</h2>
+            <iframe class="game-iframe" src="https://www.miniclip.com/games/en/" title="Lojra Online"></iframe>
+            <p>Luaj lojra emocionuese në internet. Zgjidh lojën që të pëlqen dhe fillo të luash tani!</p>
+        </div>
 
-<script>
-    // Beispiel: Nachrichten hinzufügen
-    const form = document.getElementById('chat-form');
-    const input = document.getElementById('message-input');
-    const chatBox = document.getElementById('chat-box');
+        <!-- Chat -->
+        <div class="section">
+            <h2>Chat Online</h2>
+            <textarea class="chat-box" placeholder="Shkruaj një mesazh..."></textarea>
+            <button onclick="sendMessage()">Dërgo Mesazhin</button>
+        </div>
 
-    form.onsubmit = function(e) {
-        e.preventDefault();
-        if (input.value) {
-            const message = document.createElement('p');
-            message.textContent = input.value;
-            chatBox.appendChild(message);
-            input.value = '';
-            chatBox.scrollTop = chatBox.scrollHeight; // Auto-scroll
+        <!-- Radio Online -->
+        <div class="section">
+            <h2>Radio Live</h2>
+            <iframe class="radio-iframe" src="https://www.radio.com/embed" title="Radio Live"></iframe>
+            <p>Dëgjo muzikë live dhe relaksohu me stacionet tona të ndryshme.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Lojra dhe Muzik Online. Të gjitha të drejtat e rezervuara.</p>
+    </footer>
+
+    <script>
+        // Funksioni për dërgimin e mesazhit në chat
+        function sendMessage() {
+            var chatbox = document.querySelector('.chat-box');
+            var message = chatbox.value;
+            if (message.trim() !== "") {
+                alert("Mesazhi u dërgua: " + message);
+                chatbox.value = ""; // Pas dërgimit të mesazhit, pastron kutinë
+            } else {
+                alert("Ju lutem shkruani një mesazh!");
+            }
         }
-    };
-</script>
-
+    </script>
 </body>
 </html>
