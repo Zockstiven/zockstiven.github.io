@@ -1,95 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sq">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Lojra Online dhe Video Lojrash</title>
+    <title>MyZocker | Game Center</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #333;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-        }
-        .main-content {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            margin-top: 20px;
-            padding: 20px;
-        }
-        .video-game, .online-game {
-            width: 45%;
-            margin: 10px;
-            background-color: white;
-            padding: 15px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-        .video-game img, .online-game img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-        }
-        .game-title {
-            font-size: 20px;
-            font-weight: bold;
-            margin-top: 10px;
-            text-align: center;
-        }
-        .game-description {
-            margin-top: 10px;
-            text-align: center;
-            font-size: 14px;
-        }
-        .footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            margin-top: 30px;
-        }
+        body { background-color: #0f0f0f; color: #00ff41; font-family: 'Segoe UI', sans-serif; text-align: center; margin: 0; padding: 20px; }
+        h1 { font-size: 2.5rem; text-shadow: 0 0 10px #00ff41; }
+        .game-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 20px; }
+        .game-card { background: #1a1a1a; border: 2px solid #333; border-radius: 15px; padding: 15px; transition: 0.3s; }
+        .game-card:hover { border-color: #00ff41; transform: translateY(-5px); }
+        iframe { width: 100%; height: 400px; border-radius: 10px; border: none; }
+        .btn-yt { background: #ff0000; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block; margin-top: 20px; }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Lojra Online dhe Video Lojrash</h1>
-        <p>Shiko lojra të reja dhe video lojra emocionuese që mund të luash tani!</p>
-    </header>
 
-    <div class="main-content">
-        <!-- Video Lojra -->
-        <div class="video-game">
-            <h2 class="game-title">Lojra Video Popullore</h2>
-            <img src="https://via.placeholder.com/400x250.png?text=Video+Game" alt="Video Game">
-            <p class="game-description">Këtu mund të shikoni gameplay video nga lojra të ndryshme. Dëshironi të shihni më shumë? Klikoni dhe shiko lojra në veprim!</p>
-            <video width="100%" controls>
-                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+    <h1>MYZOCKER GAME CENTER</h1>
+    <p>Luaj lojërat më të kërkuara direkt këtu!</p>
+    <a href="LINKU_YT_KETU" class="btn-yt">ABONOHU NË YOUTUBE</a>
+
+    <div class="game-grid">
+        <div class="game-card">
+            <h3>Minecraft Classic</h3>
+            <iframe src="https://classic.minecraft.net/"></iframe>
         </div>
 
-        <!-- Lojra Online -->
-        <div class="online-game">
-            <h2 class="game-title">Lojra Online</h2>
-            <img src="https://via.placeholder.com/400x250.png?text=Online+Game" alt="Online Game">
-            <p class="game-description">Luaj tani lojra online falas! Ky seksion përfshin lojra për të gjithë. Zgjidh dhe argëtohu!</p>
-            <iframe src="https://www.miniclip.com/games/en/" width="100%" height="400"></iframe>
+        <div class="game-card">
+            <h3>Subway Surfers</h3>
+            <iframe src="https://games.poki.com/458896/subway-surfers"></iframe>
+        </div>
+
+        <div class="game-card">
+            <h3>Moto X3M (Gara)</h3>
+            <iframe src="https://games.poki.com/458896/moto-x3m"></iframe>
+        </div>
+
+        <div class="game-card">
+            <h3>Temple Run 2</h3>
+            <iframe src="https://games.poki.com/458896/temple-run-2"></iframe>
         </div>
     </div>
 
-    <footer class="footer">
-        <p>&copy; 2026 Lojra Online dhe Video Lojrash. Të gjitha të drejtat e rezervuara.</p>
+    <footer>
+        <p>&copy; 2024 MyZocker Gaming - Luaj Falas</p>
     </footer>
+
 </body>
 </html>
