@@ -1,112 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sq">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Lojra Online dhe Chat</title>
+    <title>MyZocker Portal | Games, Chat & Radio</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
-        header {
-            background-color: #333;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-        }
-        .container {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            padding: 20px;
-        }
-        .game-section, .chat-section, .radio-section {
-            width: 30%;
-            margin: 10px;
-            background-color: white;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .game-section iframe, .radio-section iframe {
-            width: 100%;
-            height: 300px;
-        }
-        .chat-section textarea {
-            width: 100%;
-            height: 150px;
-            margin-top: 10px;
-            padding: 10px;
-        }
-        .chat-section button {
-            width: 100%;
-            padding: 10px;
-            background-color: #333;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
+        :root { --main-color: #00ff41; --bg-color: #050505; --card-bg: #111; }
+        body { background-color: var(--bg-color); color: white; font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; }
+        
+        /* Header & Navigation */
+        header { background: #000; padding: 20px; text-align: center; border-bottom: 2px solid var(--main-color); }
+        .ad-space { background: #222; margin: 10px auto; width: 728px; height: 90px; display: flex; align-items: center; justify-content: center; color: #555; border: 1px dashed #444; }
+
+        /* Main Layout */
+        .container { display: flex; flex-wrap: wrap; padding: 20px; gap: 20px; }
+        .game-section { flex: 3; }
+        .sidebar { flex: 1; min-width: 300px; display: flex; flex-direction: column; gap: 20px; }
+
+        /* Game Grid */
+        .game-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; }
+        .game-card { background: var(--card-bg); border-radius: 10px; overflow: hidden; cursor: pointer; border: 1px solid #222; transition: 0.3s; }
+        .game-card:hover { border-color: var(--main-color); transform: scale(1.05); }
+        .game-card img { width: 100%; height: 150px; object-fit: cover; }
+        .game-card h3 { padding: 10px; margin: 0; font-size: 1rem; text-align: center; }
+
+        /* Radio & Chat Styles */
+        .widget-box { background: var(--card-bg); padding: 15px; border-radius: 10px; border: 1px solid #333; }
+        h2 { color: var(--main-color); font-size: 1.2rem; margin-top: 0; }
+
+        /* Full Screen Overlay */
+        #game-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: black; z-index: 1000; }
+        #game-overlay iframe { width: 100%; height: 90%; border: none; }
+        .close-btn { background: red; color: white; padding: 10px 20px; cursor: pointer; float: right; font-weight: bold; }
+
+        @media (max-width: 800px) { .ad-space { width: 100%; } .container { flex-direction: column; } }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Mirësevini në Lojra Online dhe Chat!</h1>
-        <p>Luaj, bisedo dhe dëgjo muzikë këtu!</p>
-    </header>
 
-    <div class="container">
-        <!-- Lojra Online -->
-        <div class="game-section">
-            <h2>Lojra Online</h2>
-            <iframe src="https://www.miniclip.com/games/en/" title="Lojra Online"></iframe>
-        </div>
+<header>
+    <h1>MYZOCKER PORTAL</h1>
+    <div class="ad-space">HAPËSIRË PËR REKLAMË (ADSENSE 728x90)</div>
+</header>
 
-        <!-- Chat -->
-        <div class="chat-section">
-            <h2>Chat Online</h2>
-            <textarea id="chatbox" placeholder="Shkruaj një mesazh..." disabled></textarea>
-            <button onclick="sendMessage()">Dërgo Mesazhin</button>
+<div class="container">
+    
+    <div class="game-section">
+        <h2>Lojërat më të Kerkuara</h2>
+        <div class="game-grid">
+            <div class="game-card" onclick="openGame('https://www.retrogames.cc/embed/40238-super-mario-bros.html')">
+                <img src="https://assets1.ignimgs.com/2019/05/31/mario-bros---button-1559263132215.jpg" alt="Mario">
+                <h3>Super Mario</h3>
+            </div>
+            <div class="game-card" onclick="openGame('https://games.poki.com/458896/subway-surfers')">
+                <img src="https://play-lh.googleusercontent.com/TBy_7v4V6v9_YvQp_M4Yp8A5A_vA9M9u3f6vY5j_V-v9wYv-4v-4v-4v-4v-4v-4v-4v" alt="Subway">
+                <h3>Subway Surfers</h3>
+            </div>
+            <div class="game-card" onclick="openGame('https://games.poki.com/458896/moto-x3m')">
+                <img src="https://play-lh.googleusercontent.com/3_L-9Z-9v-4v-4v-4v-4v-4v-4v-4v-4v-4v-4v-4v-4v-4v-4v-4v-4v-4v-4v-4v-4v" alt="Moto">
+                <h3>Moto X3M</h3>
+            </div>
         </div>
-
-        <!-- Radio Online -->
-        <div class="radio-section">
-            <h2>Radio Live</h2>
-            <iframe src="https://www.radio.com/embed" title="Radio Live"></iframe>
-        </div>
+        
+        <div class="ad-space" style="margin-top: 40px;">HAPËSIRË PËR REKLAMË (ADSENSE)</div>
     </div>
 
-    <footer>
-        <p>&copy; 2026 Lojra dhe Muzik Online. Të gjitha të drejtat e rezervuara.</p>
-    </footer>
+    <div class="sidebar">
+        <div class="widget-box">
+            <h2>Radio Live 🎧</h2>
+            <audio controls style="width: 100%;">
+                <source src="https://icecast.rtl.de/rtl-hithits-mp3" type="audio/mpeg">
+                Browseri yt nuk e suporton radion.
+            </audio>
+            <p style="font-size: 0.8rem; color: #888;">Duke luajtur: RTL Radio Germany</p>
+        </div>
 
-    <script>
-        // Funksioni i thjeshtë për të simuluar dërgimin e mesazheve në chat
-        function sendMessage() {
-            var chatbox = document.getElementById("chatbox");
-            var message = chatbox.value;
-            if (message.trim() !== "") {
-                alert("Mesazhi u dërgua: " + message);
-                chatbox.value = ""; // Pasi të dërgohet mesazhi, pastron kutinë
-            } else {
-                alert("Ju lutem shkruani një mesazh!");
-            }
-        }
-    </script>
+        <div class="widget-box">
+            <h2>Komuniteti (Chat) 💬</h2>
+            <iframe src="https://www5.cbox.ws/box/?boxid=951522&boxtag=zockst" width="100%" height="400" frameborder="0" scrolling="auto" allowtransparency="yes"></iframe>
+        </div>
+        
+        <div class="ad-space" style="width: 100%; height: 250px;">ADS 300x250</div>
+    </div>
+</div>
+
+<div id="game-overlay">
+    <div class="close-btn" onclick="closeGame()">MBYLL LOJËN [X]</div>
+    <iframe id="game-frame" src=""></iframe>
+</div>
+
+<script>
+    function openGame(url) {
+        document.getElementById('game-frame').src = url;
+        document.getElementById('game-overlay').style.display = 'block';
+    }
+    function closeGame() {
+        document.getElementById('game-overlay').style.display = 'none';
+        document.getElementById('game-frame').src = '';
+    }
+</script>
+
 </body>
 </html>
