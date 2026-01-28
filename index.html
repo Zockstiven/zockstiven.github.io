@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Website për AdSense</title>
+    <title>Lojra Online dhe Video Lojrash</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -18,47 +18,78 @@
             padding: 20px;
             text-align: center;
         }
-        .content {
+        header h1 {
+            margin: 0;
+        }
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 20px;
             padding: 20px;
         }
-        .ads {
-            background-color: #eaeaea;
-            padding: 20px;
-            margin-top: 20px;
+        .video-game, .online-game {
+            width: 45%;
+            margin: 10px;
+            background-color: white;
+            padding: 15px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .video-game img, .online-game img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .game-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 10px;
             text-align: center;
         }
-        footer {
+        .game-description {
+            margin-top: 10px;
+            text-align: center;
+            font-size: 14px;
+        }
+        .footer {
             background-color: #333;
             color: white;
-            padding: 10px;
             text-align: center;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+            padding: 10px;
+            margin-top: 30px;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Mirësevini në Faqen Tonë!</h1>
-        <p>Ky është një shembull i thjeshtë për të treguar si mund të vendosni reklama Google AdSense në faqen tuaj.</p>
+        <h1>Lojra Online dhe Video Lojrash</h1>
+        <p>Shiko lojra të reja dhe video lojra emocionuese që mund të luash tani!</p>
     </header>
 
-    <section class="content">
-        <h2>Rreth Nesh</h2>
-        <p>Kjo faqe është një shembull që mund të përdorni për të lidhur me Google AdSense dhe fituar nga reklamat.</p>
-    </section>
-
-    <section class="ads">
-        <h3>Reklama nga Google AdSense</h3>
-        <!-- Vendosni këtu kodin e reklamave AdSense -->
-        <div id="adsense">
-            <!-- Reklama AdSense do të shfaqen këtu -->
+    <div class="main-content">
+        <!-- Video Lojra -->
+        <div class="video-game">
+            <h2 class="game-title">Lojra Video Popullore</h2>
+            <img src="https://via.placeholder.com/400x250.png?text=Video+Game" alt="Video Game">
+            <p class="game-description">Këtu mund të shikoni gameplay video nga lojra të ndryshme. Dëshironi të shihni më shumë? Klikoni dhe shiko lojra në veprim!</p>
+            <video width="100%" controls>
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
-    </section>
 
-    <footer>
-        <p>&copy; 2026 Faqja Juaj</p>
+        <!-- Lojra Online -->
+        <div class="online-game">
+            <h2 class="game-title">Lojra Online</h2>
+            <img src="https://via.placeholder.com/400x250.png?text=Online+Game" alt="Online Game">
+            <p class="game-description">Luaj tani lojra online falas! Ky seksion përfshin lojra për të gjithë. Zgjidh dhe argëtohu!</p>
+            <iframe src="https://www.miniclip.com/games/en/" width="100%" height="400"></iframe>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 Lojra Online dhe Video Lojrash. Të gjitha të drejtat e rezervuara.</p>
     </footer>
 </body>
 </html>
