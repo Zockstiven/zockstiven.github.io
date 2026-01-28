@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Lojra Online, Chat dhe Muzik</title>
+    <title>Lojra Online dhe Chat</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         * {
@@ -14,23 +14,24 @@
         }
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #f4f4f4;
+            background-color: #f0f0f0;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             height: 100vh;
             color: #333;
+            overflow-x: hidden;
         }
         header {
-            background: linear-gradient(45deg, #ff7e5f, #feb47b);
+            background: #1a2b3c;
             color: white;
             text-align: center;
             padding: 20px 0;
             width: 100%;
         }
         header h1 {
-            font-size: 36px;
+            font-size: 40px;
             margin-bottom: 10px;
         }
         header p {
@@ -39,7 +40,7 @@
         .container {
             display: flex;
             justify-content: space-around;
-            width: 80%;
+            width: 90%;
             flex-wrap: wrap;
             margin-top: 40px;
         }
@@ -52,11 +53,10 @@
             margin: 10px;
             padding: 20px;
             text-align: center;
+            transition: all 0.3s ease-in-out;
         }
-        .section h2 {
-            margin-bottom: 20px;
-            font-size: 24px;
-            color: #ff7e5f;
+        .section:hover {
+            transform: scale(1.05);
         }
         .game-iframe, .radio-iframe {
             width: 100%;
@@ -75,7 +75,7 @@
         }
         .chat-box button {
             padding: 10px;
-            background-color: #ff7e5f;
+            background-color: #4CAF50;
             color: white;
             border: none;
             border-radius: 8px;
@@ -84,63 +84,21 @@
             margin-top: 10px;
         }
         .chat-box button:hover {
-            background-color: #feb47b;
+            background-color: #45a049;
         }
         footer {
             margin-top: 40px;
-            background-color: #333;
+            background-color: #1a2b3c;
             color: white;
             text-align: center;
             padding: 10px;
             width: 100%;
         }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Mirësevini në Lojra dhe Chat Online!</h1>
-        <p>Luaj, Bisedo dhe Dëgjo Muzikë të Përshtatshme për Të Rriturit!</p>
-    </header>
-
-    <div class="container">
-        <!-- Lojra Online -->
-        <div class="section">
-            <h2>Lojra Online</h2>
-            <iframe class="game-iframe" src="https://www.miniclip.com/games/en/" title="Lojra Online"></iframe>
-            <p>Luaj lojra emocionuese në internet. Zgjidh lojën që të pëlqen dhe fillo të luash tani!</p>
-        </div>
-
-        <!-- Chat -->
-        <div class="section">
-            <h2>Chat Online</h2>
-            <textarea class="chat-box" placeholder="Shkruaj një mesazh..."></textarea>
-            <button onclick="sendMessage()">Dërgo Mesazhin</button>
-        </div>
-
-        <!-- Radio Online -->
-        <div class="section">
-            <h2>Radio Live</h2>
-            <iframe class="radio-iframe" src="https://www.radio.com/embed" title="Radio Live"></iframe>
-            <p>Dëgjo muzikë live dhe relaksohu me stacionet tona të ndryshme.</p>
-        </div>
-    </div>
-
-    <footer>
-        <p>&copy; 2026 Lojra dhe Muzik Online. Të gjitha të drejtat e rezervuara.</p>
-    </footer>
-
-    <script>
-        // Funksioni për dërgimin e mesazhit në chat
-        function sendMessage() {
-            var chatbox = document.querySelector('.chat-box');
-            var message = chatbox.value;
-            if (message.trim() !== "") {
-                alert("Mesazhi u dërgua: " + message);
-                chatbox.value = ""; // Pas dërgimit të mesazhit, pastron kutinë
-            } else {
-                alert("Ju lutem shkruani një mesazh!");
+        @media only screen and (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
             }
-        }
-    </script>
-</body>
-</html>
+            .section {
+                width: 80%;
+                margin: 20
