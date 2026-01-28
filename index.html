@@ -1,50 +1,112 @@
 <!DOCTYPE html>
-<html lang="sq">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MyZocker | Game Center</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lojra Online dhe Chat</title>
     <style>
-        body { background-color: #0f0f0f; color: #00ff41; font-family: 'Segoe UI', sans-serif; text-align: center; margin: 0; padding: 20px; }
-        h1 { font-size: 2.5rem; text-shadow: 0 0 10px #00ff41; }
-        .game-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 20px; }
-        .game-card { background: #1a1a1a; border: 2px solid #333; border-radius: 15px; padding: 15px; transition: 0.3s; }
-        .game-card:hover { border-color: #00ff41; transform: translateY(-5px); }
-        iframe { width: 100%; height: 400px; border-radius: 10px; border: none; }
-        .btn-yt { background: #ff0000; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block; margin-top: 20px; }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+        .game-section, .chat-section, .radio-section {
+            width: 30%;
+            margin: 10px;
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .game-section iframe, .radio-section iframe {
+            width: 100%;
+            height: 300px;
+        }
+        .chat-section textarea {
+            width: 100%;
+            height: 150px;
+            margin-top: 10px;
+            padding: 10px;
+        }
+        .chat-section button {
+            width: 100%;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
     </style>
 </head>
 <body>
+    <header>
+        <h1>Mirësevini në Lojra Online dhe Chat!</h1>
+        <p>Luaj, bisedo dhe dëgjo muzikë këtu!</p>
+    </header>
 
-    <h1>MYZOCKER GAME CENTER</h1>
-    <p>Luaj lojërat më të kërkuara direkt këtu!</p>
-    <a href="LINKU_YT_KETU" class="btn-yt">ABONOHU NË YOUTUBE</a>
-
-    <div class="game-grid">
-        <div class="game-card">
-            <h3>Minecraft Classic</h3>
-            <iframe src="https://classic.minecraft.net/"></iframe>
+    <div class="container">
+        <!-- Lojra Online -->
+        <div class="game-section">
+            <h2>Lojra Online</h2>
+            <iframe src="https://www.miniclip.com/games/en/" title="Lojra Online"></iframe>
         </div>
 
-        <div class="game-card">
-            <h3>Subway Surfers</h3>
-            <iframe src="https://games.poki.com/458896/subway-surfers"></iframe>
+        <!-- Chat -->
+        <div class="chat-section">
+            <h2>Chat Online</h2>
+            <textarea id="chatbox" placeholder="Shkruaj një mesazh..." disabled></textarea>
+            <button onclick="sendMessage()">Dërgo Mesazhin</button>
         </div>
 
-        <div class="game-card">
-            <h3>Moto X3M (Gara)</h3>
-            <iframe src="https://games.poki.com/458896/moto-x3m"></iframe>
-        </div>
-
-        <div class="game-card">
-            <h3>Temple Run 2</h3>
-            <iframe src="https://games.poki.com/458896/temple-run-2"></iframe>
+        <!-- Radio Online -->
+        <div class="radio-section">
+            <h2>Radio Live</h2>
+            <iframe src="https://www.radio.com/embed" title="Radio Live"></iframe>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2024 MyZocker Gaming - Luaj Falas</p>
+        <p>&copy; 2026 Lojra dhe Muzik Online. Të gjitha të drejtat e rezervuara.</p>
     </footer>
 
+    <script>
+        // Funksioni i thjeshtë për të simuluar dërgimin e mesazheve në chat
+        function sendMessage() {
+            var chatbox = document.getElementById("chatbox");
+            var message = chatbox.value;
+            if (message.trim() !== "") {
+                alert("Mesazhi u dërgua: " + message);
+                chatbox.value = ""; // Pasi të dërgohet mesazhi, pastron kutinë
+            } else {
+                alert("Ju lutem shkruani një mesazh!");
+            }
+        }
+    </script>
 </body>
 </html>
