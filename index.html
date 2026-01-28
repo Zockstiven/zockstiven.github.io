@@ -3,60 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZOCKSTIVEN | Minecraft 1.21.1 Style</title>
+    <title>ZOCKSTIVEN | Multiplayer Minecraft</title>
     <style>
         body, html { margin: 0; padding: 0; height: 100%; background-color: #000; font-family: 'Segoe UI', sans-serif; overflow: hidden; }
         
         header { 
-            background: #1a1a1a; padding: 10px 20px; 
+            background: #111; padding: 10px 20px; 
             display: flex; justify-content: space-between; align-items: center; 
-            border-bottom: 3px solid #55aa55; position: relative; z-index: 10;
+            border-bottom: 2px solid #00ff41; position: relative; z-index: 10;
         }
 
-        .logo { color: #55aa55; font-weight: bold; font-size: 1.4rem; text-shadow: 2px 2px #000; }
+        .logo { color: #00ff41; font-weight: bold; font-size: 1.2rem; letter-spacing: 1px; }
         
-        .nav-right { display: flex; gap: 15px; align-items: center; }
+        .nav-right { display: flex; gap: 10px; align-items: center; }
 
-        .btn { padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; cursor: pointer; border: none; font-size: 1rem; transition: 0.3s; }
+        .btn { padding: 8px 15px; text-decoration: none; border-radius: 4px; font-weight: bold; cursor: pointer; border: none; font-size: 0.9rem; }
         .yt-btn { background: #ff0000; color: white; }
-        .fs-btn { background: #55aa55; color: white; }
-        .btn:hover { transform: scale(1.05); filter: brightness(1.2); }
+        .fs-btn { background: #00ff41; color: black; }
 
-        .game-wrapper { width: 100%; height: calc(100vh - 150px); background: #222; position: relative; }
-        
-        /* Ky është një server që hoston Minecraft version Web që ngjan si i riu */
+        .game-wrapper { width: 100%; height: calc(100vh - 140px); position: relative; }
         iframe { width: 100%; height: 100%; border: none; }
 
-        .info-bar { background: #333; color: #ccc; font-size: 0.8rem; text-align: center; padding: 5px; }
-        .ad-area { height: 90px; background: #000; display: flex; justify-content: center; align-items: center; border-top: 1px solid #333; color: #444; }
+        .ad-area { height: 90px; background: #000; display: flex; justify-content: center; align-items: center; color: #333; font-size: 0.7rem; border-top: 1px solid #222; }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="logo">MINECRAFT 1.21.1 ONLINE EDITION</div>
+    <div class="logo">ZOCKSTIVEN GAMING</div>
     <div class="nav-right">
-        <button class="btn fs-btn" onclick="openFullscreen();">VOLLBILD</button>
+        <button class="btn fs-btn" onclick="openFullscreen();">VOLLBILDMODUS</button>
         <a href="https://www.youtube.com/@Zockstiven" target="_blank" class="btn yt-btn">ABONNIEREN</a>
     </div>
 </header>
 
-<div class="info-bar">Warte bis das Spiel geladen ist... (Lädt Ressourcen wie Version 1.21.1)</div>
-
 <div class="game-wrapper" id="game-section">
-    <iframe id="minecraft-frame" src="https://eaglercraft.com/mc/1.8.8/" allowfullscreen></iframe>
+    <iframe id="minecraft-frame" src="https://classic.minecraft.net/" allowfullscreen></iframe>
 </div>
 
-<div class="ad-area">GOOGLE ADSENSE REKLAME</div>
+<div class="ad-area">GOOGLE ADSENSE REKLAME HIER</div>
 
 <script>
     var elem = document.getElementById("minecraft-frame");
     function openFullscreen() {
         if (elem.requestFullscreen) {
             elem.requestFullscreen();
-        } else if (elem.webkitRequestFullscreen) {
+        } else if (elem.webkitRequestFullscreen) { /* Safari */
             elem.webkitRequestFullscreen();
-        } else if (elem.msRequestFullscreen) {
+        } else if (elem.msRequestFullscreen) { /* IE11 */
             elem.msRequestFullscreen();
         }
     }
